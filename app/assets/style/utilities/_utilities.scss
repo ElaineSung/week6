@@ -1,0 +1,134 @@
+// stylelint-disable indentation
+
+// Utilities
+
+$utilities: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-merge(
+  (
+    // scss-docs-start utils-overflow
+    "overflow": (
+      responsive: true,  //add
+      property: overflow,
+      values: auto hidden visible scroll,
+    ),
+    // scss-docs-end utils-overflow
+    // Flex utilities
+    // scss-docs-start utils-flex
+
+    "justify-content": (
+      responsive: true,
+      property: justify-content,
+      class: j-c,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        evenly: space-evenly,
+      )
+    ),
+    "align-items": (
+      responsive: true,
+      property: align-items,
+      class: a-i,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      )
+    ),
+    "align-content": (
+      responsive: true,
+      property: align-content,
+      class: a-c,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        stretch: stretch,
+      )
+    ),
+    "align-self": (
+      responsive: true,
+      property: align-self,
+      class: a-s,
+      values: (
+        auto: auto,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      )
+    ),
+    // scss-docs-end utils-flex
+    // Text
+    // scss-docs-start utils-text
+    "font-weight": map-merge(
+      map-get($utilities, "font-weight"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "font-weight"), "values"),
+          (medium: $font-weight-medium),
+        ),
+      ),
+    ),
+    // scss-docs-end utils-text
+    // add
+    // scss-docs-start utils-opacity
+    "opacity": (
+      property: opacity,
+      responsive: true,
+      values: (
+        0: 0,
+        25: .25,
+        50: .5,
+        75: .75,
+        100: 1,
+      )
+    ),
+    // scss-docs-end utils-opacity
+    // scss-docs-start utils-cursor
+    "cursor": (
+      property: cursor,
+      class: cursor,
+      responsive: true,
+      values: auto pointer grab,
+    ),
+    // scss-docs-end utils-cursor
+    // object utilities
+    // scss-docs-start utils-object-fit
+    "object-fit": (
+      responsive: true,
+      property: object-fit,
+      class: object,
+      values: (
+        fill: fill,
+        contain: contain,
+        cover: cover,
+        none: none,
+        scale-down: scale-down,
+      )
+    ),
+    // scss-docs-end utils-object-fit
+    // scss-docs-start utils-object-position
+    "object-position": (
+      responsive: true,
+      property: object-position,
+      class: object-pos,
+      values: (
+        center: center,
+        left: left,
+        right: right,
+      )
+    )
+    // scss-docs-end utils-object-position
+  ),
+  $utilities
+);

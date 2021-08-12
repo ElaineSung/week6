@@ -1,0 +1,27 @@
+.header {
+	&__tool {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+	}
+}
+.homebanner {
+	@include background( "homebanner.jpg", no-repeat, cover, center);
+	min-height: 480px;
+}
+.nav-scroller {
+	height: 3rem; /* 隱藏下方捲軸 */
+	overflow-y: hidden;
+	.navbar-nav {
+		padding-bottom: 1rem; /* 隱藏下方捲軸 */
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
+}
+.footer {
+	&__banner {
+		@include background( "footer-banner.jpg", no-repeat, cover, center);
+		min-height: 400px;
+	}
+}

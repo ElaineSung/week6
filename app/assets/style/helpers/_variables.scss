@@ -67,14 +67,16 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       #00cc99; // $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #630834 !default; // $blue
+$secondary:     #E31277 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$light:         #EFEFEF !default; //$gray-100
+$dark:          #707070 !default; //$gray-900
+$white:         #fff !default;
+$black:         #000 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -86,7 +88,9 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "white":      $light,
+  "black":      $dark
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -250,11 +254,19 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * .25,  //4
+  2: $spacer * .5,   //8
+  3: $spacer * .75,  //12
+  4: $spacer,        //16
+  5: $spacer * 1.25, //20
+  6: $spacer * 1.5,  //24
+  7: $spacer * 1.75,  //28
+  8: $spacer * 2,    //32
+  9: $spacer * 3,    //48
+  10: $spacer * 3.25,    //52
+  11: $spacer * 3.5,    //56
+  12: $spacer * 3.75,    //60
+  
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -285,10 +297,10 @@ $body-text-align:           null !default;
 //
 // Style anchor elements.
 
-$link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-color:                              $dark !default;
+$link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
-$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-color:                        $primary !default;
 $link-hover-decoration:                   null !default;
 
 $stretched-link-pseudo-element:           after !default;
@@ -343,7 +355,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
+$grid-gutter-width:           1.875rem !default;
 $grid-row-columns:            6 !default;
 
 $gutters: $spacers !default;
@@ -416,7 +428,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      Roboto, 'Noto Sans TC', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$variable-prefix}font-sans-serif) !default;
@@ -427,11 +439,13 @@ $font-family-code:            var(--#{$variable-prefix}font-monospace) !default;
 $font-size-root:              null !default;
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-sm:                $font-size-base * .875 !default;
+$font-size-xs:                $font-size-base * .75 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
 $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
@@ -441,11 +455,11 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
+$h1-font-size:                $font-size-base * 2 !default; //32
+$h2-font-size:                $font-size-base * 2 !default; //32
+$h3-font-size:                $font-size-base * 1.75 !default; //28
+$h4-font-size:                $font-size-base * 1.5 !default; //24
+$h5-font-size:                $font-size-base * 1.25 !default; //20
 $h6-font-size:                $font-size-base !default;
 // scss-docs-end font-variables
 
@@ -456,12 +470,14 @@ $font-sizes: (
   3: $h3-font-size,
   4: $h4-font-size,
   5: $h5-font-size,
-  6: $h6-font-size
+  6: $h6-font-size,
+  7: $font-size-sm, //14
+  8: $font-size-xs  //12
 ) !default;
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      0 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
@@ -971,9 +987,9 @@ $navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
 
-$navbar-light-color:                rgba($black, .55) !default;
-$navbar-light-hover-color:          rgba($black, .7) !default;
-$navbar-light-active-color:         rgba($black, .9) !default;
+$navbar-light-color:                $secondary !default;
+$navbar-light-hover-color:          $primary !default;
+$navbar-light-active-color:         $primary !default;
 $navbar-light-disabled-color:       rgba($black, .3) !default;
 $navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-light-toggler-border-color: rgba($black, .1) !default;
@@ -1082,10 +1098,10 @@ $pagination-border-radius-lg:       $border-radius-lg !default;
 
 // scss-docs-start card-variables
 $card-spacer-y:                     $spacer !default;
-$card-spacer-x:                     $spacer !default;
+$card-spacer-x:                     0; //$spacer !default;
 $card-title-spacer-y:               $spacer * .5 !default;
-$card-border-width:                 $border-width !default;
-$card-border-radius:                $border-radius !default;
+$card-border-width:                 0; //$border-width !default;
+$card-border-radius:                0; //$border-radius !default;
 $card-border-color:                 rgba($black, .125) !default;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 $card-cap-padding-y:                $card-spacer-y * .5 !default;

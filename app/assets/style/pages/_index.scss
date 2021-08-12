@@ -1,0 +1,45 @@
+.exhibition {
+	&__card {
+		&-body {
+			min-height: 350px;
+			padding: 40px 0px;
+		}
+		&-date {
+			max-width: 40px;
+			padding: 40px 0 50px 0;
+		}
+		&-1 {
+			.card__img { object-position: 90% center; }
+		}
+		&-2 {
+			.card__img { object-position: 38% center; }
+		}
+		&-3 {
+			.card__img { object-position: left center; }
+		}
+	}
+}
+.live-review {
+	&__card {
+		@include background( "people-bg.png", no-repeat, cover, center);
+	}
+	&__text {
+		padding: 40px 24px;
+		background-color: #190014CC;
+	}
+	&__title {
+		span::after {
+			content: '';
+			position: absolute;
+			top: -4px;
+			right: 0;
+			width: 1px;
+			height: 42px;
+			background-color: $white;
+		}
+	}
+}
+.others {
+
+}
+
