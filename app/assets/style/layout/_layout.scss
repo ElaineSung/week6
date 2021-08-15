@@ -20,7 +20,7 @@
 	@include background( "homebanner.jpg", no-repeat, cover, center);
 	min-height: 480px;
 }
-.nav-scroller {
+.header-nav.nav-scroller {
 	height: 3rem; /* 隱藏下方捲軸 */
 	overflow-y: hidden;
 	.navbar-nav {

@@ -1,44 +1,40 @@
 .exhibition {
-	&__card {
-		.card__img {
+	&-card {
+		&__img {
 			height: 345px;
 		}
 		&-1 {
-			.card__img { object-position: 90% center; }
+			.exhibition-card__img { object-position: 90% center; }
 		}
 		&-2 {
-			.card__img { object-position: 45% center; }
+			.exhibition-card__img { object-position: 45% center; }
 		}
 		&-3 {
-			.card__img { object-position: left center; }
+			.exhibition-card__img { object-position: left center; }
 		}
-		.card-date {
+		&__date {
 			max-width: 40px;
 		}
 		@include media-breakpoint-up(md) {
-			.card-body {
+			&__body {
 				min-height: 350px;
-				padding: 40px 0 !important;
 			}
-			.card__img {
+			&__img {
 				height: 100%;
 			}
-			.card-desc {
+			&__desc {
 				@include text-truncate-multi( 4 );
 			}
 		}
 	}
 }
-.live-review {
-	&__card {
+.liveReplay {
+	&-card {
 		@include background( "people-bg.png", no-repeat, cover, center);
-	}
-	&__text {
-		padding: 40px 24px;
-		background-color: #190014CC;
-	}
-	&__title {
-		span::after {
+		&__desc {
+			background-color: #190014CC;
+		}
+		&__title-line::after {
 			content: '';
 			position: absolute;
 			top: -4px;
@@ -49,7 +45,3 @@
 		}
 	}
 }
-.others {
-
-}
-
