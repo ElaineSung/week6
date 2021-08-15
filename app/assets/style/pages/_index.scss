@@ -1,21 +1,31 @@
 .exhibition {
 	&__card {
-		&-body {
-			min-height: 350px;
-			padding: 40px 0px;
-		}
-		&-date {
-			max-width: 40px;
-			padding: 40px 0 50px 0;
+		.card__img {
+			height: 345px;
 		}
 		&-1 {
 			.card__img { object-position: 90% center; }
 		}
 		&-2 {
-			.card__img { object-position: 38% center; }
+			.card__img { object-position: 45% center; }
 		}
 		&-3 {
 			.card__img { object-position: left center; }
+		}
+		.card-date {
+			max-width: 40px;
+		}
+		@include media-breakpoint-up(md) {
+			.card-body {
+				min-height: 350px;
+				padding: 40px 0 !important;
+			}
+			.card__img {
+				height: 100%;
+			}
+			.card-desc {
+				@include text-truncate-multi( 4 );
+			}
 		}
 	}
 }

@@ -4,3 +4,11 @@
 	background-size: $size;
 	background-position: $position;
 }
+
+/* 內文溢出-多行 */
+@mixin text-truncate-multi( $clamp ) {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $clamp;
+}
