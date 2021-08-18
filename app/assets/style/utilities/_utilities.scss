@@ -1,29 +1,19 @@
-// stylelint-disable indentation
-
-// Utilities
-
-$utilities: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   $utilities,
   (
-    // scss-docs-start utils-overflow
-    "overflow": (
-      responsive: true,  //add
-      property: overflow,
-      values: auto hidden visible scroll,
+    "overflow": map-merge(
+      map-get($utilities,"overflow"),
+      (
+        responsive: true,
+      )
     ),
-    // scss-docs-end utils-overflow
-    // scss-docs-start utils-position
-    "position": (
-      responsive: true,  //add
-      property: position,
-      class: pos,
-      values: static relative absolute fixed sticky
+    "position": map-merge(
+      map-get($utilities,"position"),
+      (
+        responsive: true,
+        class: pos,
+      )
     ),
-    // scss-docs-end utils-position
-    // Sizing utilities
-    // scss-docs-start utils-sizing
     "width": (
       responsive: true,  //add
       property: width,
@@ -36,12 +26,6 @@ $utilities: map-merge(
         100: 100%,
         auto: auto
       )
-    ),
-    "max-width": (
-      responsive: true,  //add
-      property: max-width,
-      class: mw,
-      values: (100: 100%)
     ),
     "height": (
       responsive: true,  //add
@@ -56,75 +40,35 @@ $utilities: map-merge(
         auto: auto
       )
     ),
-    "max-height": (
-      responsive: true,  //add
-      property: max-height,
-      class: mh,
-      values: (100: 100%)
-    ),
-    // scss-docs-end utils-sizing
-    // Flex utilities
-    // scss-docs-start utils-flex
-    "justify-content": (
-      responsive: true,
-      property: justify-content,
-      class: j-content,
-      values: (
-        start: flex-start,
-        end: flex-end,
-        center: center,
-        between: space-between,
-        around: space-around,
-        evenly: space-evenly,
+    "justify-content": map-merge(
+      map-get($utilities,"justify-content"),
+      (
+        class: j-content,
       )
     ),
-    "align-items": (
-      responsive: true,
-      property: align-items,
-      class: a-items,
-      values: (
-        start: flex-start,
-        end: flex-end,
-        center: center,
-        baseline: baseline,
-        stretch: stretch,
+    "align-items": map-merge(
+      map-get($utilities,"align-items"),
+      (
+        class: a-items,
       )
     ),
-    "align-content": (
-      responsive: true,
-      property: align-content,
-      class: a-content,
-      values: (
-        start: flex-start,
-        end: flex-end,
-        center: center,
-        between: space-between,
-        around: space-around,
-        stretch: stretch,
+    "align-content": map-merge(
+      map-get($utilities,"align-content"),
+      (
+        class: a-content,
       )
     ),
-    "align-self": (
-      responsive: true,
-      property: align-self,
-      class: a-self,
-      values: (
-        auto: auto,
-        start: flex-start,
-        end: flex-end,
-        center: center,
-        baseline: baseline,
-        stretch: stretch,
+    "align-self": map-merge(
+      map-get($utilities,"align-self"),
+      (
+        class: a-self,
       )
     ),
-    // scss-docs-end utils-flex
-    // Text
-    // scss-docs-start utils-text
-    "font-size": (
-      rfs: true,
-      property: font-size,
-      class: fs,
-      responsive: true, //add
-      values: $font-sizes
+    "font-size": map-merge(
+      map-get($utilities,"font-size"),
+      (
+        responsive: true,
+      )
     ),
     "font-weight": map-merge(
       map-get($utilities, "font-weight"),
@@ -135,19 +79,15 @@ $utilities: map-merge(
         ),
       ),
     ),
-    "line-height": (
-      property: line-height,
-      class: lh,
-      values: (
-        1: 1,
-        xs: $line-height-xs, //add
-        sm: $line-height-sm,
-        base: $line-height-base,
-        lg: $line-height-lg,
+    "line-height": map-merge(
+      map-get($utilities,"line-height"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "line-height"), "values"),
+          (xs: $line-height-xs),
+        ),
       )
     ),
-    // scss-docs-end utils-text
-
     // add
     "display-font-size": (
       responsive: true,
@@ -155,7 +95,6 @@ $utilities: map-merge(
       class: display,
       values: $display-font-sizes
     ),
-    // scss-docs-start utils-opacity
     "opacity": (
       property: opacity,
       responsive: true,
@@ -170,17 +109,12 @@ $utilities: map-merge(
         100: 1,
       )
     ),
-    // scss-docs-end utils-opacity
-    // scss-docs-start utils-cursor
     "cursor": (
       property: cursor,
       class: cursor,
       responsive: true,
       values: auto pointer grab,
     ),
-    // scss-docs-end utils-cursor
-    // object utilities
-    // scss-docs-start utils-object-fit
     "object-fit": (
       responsive: true,
       property: object-fit,
@@ -193,8 +127,6 @@ $utilities: map-merge(
         scale-down: scale-down,
       )
     ),
-    // scss-docs-end utils-object-fit
-    // scss-docs-start utils-object-position
     "object-position": (
       responsive: true,
       property: object-position,
@@ -205,19 +137,18 @@ $utilities: map-merge(
         right: right,
       )
     ),
-    // scss-docs-end utils-object-position
-    // scss-docs-start utils-zindex
     "z-index": (
       responsive: true,
       property: z-index,
       values: (
         0: 0,
+        1: 1,
+        50: 50,
         100: 100,
         500: 500,
         1000: 1000,
         9999: 9999,
       )
     )
-    // scss-docs-end utils-zindex
   ),
 );

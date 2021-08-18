@@ -23,7 +23,7 @@
 		<%- include('./layout/_banner.html') %>
 
 		<!-- nav -->
-		<div class="header-nav nav-scroller border-bottom border-dark">
+		<div class="headerNav nav-scroller border-bottom border-dark">
 			<nav class="container-md navbar navbar-expand j-content-md-center px-0 py-3" aria-label="Secondary navigation">
 				<ul class="navbar-nav flex-row flex-nowrap j-content-md-center">
 					<li class="nav-item me-4">
@@ -33,7 +33,7 @@
 						<a class="nav-link pos-relative px-4 py-0" href="#">戲劇</a>
 					</li>
 					<li class="nav-item me-4">
-						<a class="nav-link pos-relative px-4 py-0 <%= current === 'design' && 'active' %>" href="./design.html">設計</a>
+						<a class="nav-link pos-relative px-4 py-0 <%= current === 'product' && 'nav-link--active' %>" href="./product.html">設計</a>
 					</li>
 					<li class="nav-item me-4">
 						<a class="nav-link pos-relative px-4 py-0" href="#">藝術</a>
@@ -62,8 +62,8 @@
 			<%- contents %>
 		</main>
 
-		<!-- others-like -->
-		<%- include('./layout/_others-like.html') %>
+		<!-- othersLike -->
+		<%- include('./layout/_othersLike.html') %>
 
 		<!-- footer -->
 		<%- include('./layout/_footer.html') %>

@@ -1,47 +1,35 @@
 .exhibition {
-	&-card {
-		&__img {
-			height: 345px;
-		}
-		&-1 {
-			.exhibition-card__img { object-position: 90% center; }
-		}
-		&-2 {
-			.exhibition-card__img { object-position: 45% center; }
-		}
-		&-3 {
-			.exhibition-card__img { object-position: left center; }
-		}
-		&__date {
-			max-width: 40px;
-		}
-		@include media-breakpoint-up(md) {
-			&__body {
-				min-height: 350px;
-			}
-			&__img {
-				height: 100%;
-			}
-			&__desc {
-				@include text-truncate-multi( 4 );
-			}
-		}
-	}
+  &-card {
+    &__img {
+      height: 345px;
+    }
+    &__date {
+      max-width: 40px;
+    }
+    @include media-breakpoint-up(md) {
+      &__body {
+        min-height: 350px;
+      }
+      &__desc {
+        @include text-truncate-multi( 4 );
+      }
+    }
+  }
 }
 .liveReplay {
-	&-card {
-		@include background( "people-bg.png", no-repeat, cover, center);
-		&__desc {
-			background-color: #190014CC;
-		}
-		&__title-line::after {
-			content: '';
-			position: absolute;
-			top: -4px;
-			right: 0;
-			width: 1px;
-			height: 42px;
-			background-color: $white;
-		}
-	}
+  &-card {
+    @include background( "people-bg.png", no-repeat, cover, center);
+    &__desc {
+      background-color: #190014CC;
+    }
+    &__title-line::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: 0;
+      width: 1px;
+      height: 42px;
+      background-color: $white;
+    }
+  }
 }
