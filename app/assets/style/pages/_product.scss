@@ -16,10 +16,7 @@
       height: 16rem;
     }
     &__date {
-      position: absolute;
-      top: 50%;
       right: 25px;
-      transform: translateY(-50%);
       max-width: 40px;
     }
     @include media-breakpoint-up(md) {

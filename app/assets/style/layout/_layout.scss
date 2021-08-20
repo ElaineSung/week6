@@ -1,9 +1,6 @@
 .header {
   &__tool {
-    position: absolute;
-    top: 50%;
     right: 26px;
-    transform: translateY(-50%);
     .badge {
       position: absolute;
       top: -12px;
@@ -16,6 +13,14 @@
 .homebanner {
   @include background( "homebanner.jpg", no-repeat, cover, center);
   min-height: 480px;
+}
+.cartModal {
+  .card {
+    &-img{
+      width: 120px;
+      height: 120px;
+    }
+  }
 }
 .footer {
   &__banner {

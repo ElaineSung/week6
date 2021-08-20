@@ -2,9 +2,30 @@ $utilities: map-merge(
   $utilities,
   (
     "overflow": map-merge(
-      map-get($utilities,"overflow"),
-      (
+      map-get($utilities,"overflow"),(
         responsive: true,
+        property: overflow,
+        class: overflow,
+        values: (
+          auto: auto,
+          hidden: hidden,
+          visible: visible,
+          scroll: scroll
+        )
+      )
+    ),
+    "overflow-x": map-merge(
+      map-get($utilities,"overflow"),(
+        responsive: true,
+        property: overflow-x,
+        class: overflow-x
+      )
+    ),
+    "overflow-y": map-merge(
+      map-get($utilities,"overflow"),(
+        responsive: true,
+        property: overflow-y,
+        class: overflow-y
       )
     ),
     "position": map-merge(
@@ -12,6 +33,12 @@ $utilities: map-merge(
       (
         responsive: true,
         class: pos,
+      )
+    ),
+    "translate-middle": map-merge(
+      map-get($utilities,"translate-middle"),
+      (
+        responsive: true,
       )
     ),
     "width": (
@@ -37,7 +64,17 @@ $utilities: map-merge(
         75: 75%,
         80: 80%,
         100: 100%,
-        auto: auto
+        auto: auto,
+      )
+    ),
+    "min-viewport-height": map-merge(
+      map-get($utilities,"min-viewport-height"),
+      (
+        responsive: true,
+        values: map-merge(
+          map-get(map-get($utilities, "min-viewport-height"), "values"),
+          (80: 80vh),
+        ),
       )
     ),
     "justify-content": map-merge(

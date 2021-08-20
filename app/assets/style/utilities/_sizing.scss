@@ -1,0 +1,60 @@
+
+.h {
+  &-84 {
+    height: 84px;
+  }
+  &-120 {
+    height: 120px;
+  }
+  &-256 {
+    height: 256px;
+  }
+  &-285 {
+    height: 285px;
+  }
+  &-345 {
+    height: 345px;
+  }
+  &-400 {
+    height: 400px;
+  }
+  &-560 {
+    height: 560px;
+  }
+  
+}
+.w {
+  &-120 {
+    width: 120px;
+  }
+}
+
+.h-md-256 {
+  @include media-breakpoint-up(md) {
+    height: 256px;
+  }
+}
+
+.h-lg-285 {
+  @include media-breakpoint-up(lg) {
+    height: 285px;
+  }
+}
+
+
+// xs-1
+// sm-1
+// md-2
+// lg-3
+// xl-4
+// xxl-5
+
+// 84
+
+// 120
+// 256
+// 285
+// 345
+
+// 400
+// 599
