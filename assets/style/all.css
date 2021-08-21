@@ -16509,46 +16509,12 @@ ul, ol {
 
 /* 透明度遮罩 */
 /* 內文溢出-多行 */
-.scrollbar::-webkit-scrollbar {
-  width: 2px;
-  border-radius: 4px;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  border: solid 1px #E31277;
-}
-
-.scrollbar::-webkit-scrollbar-track {
-  background-color: #fff;
-}
-
-.timeline::after {
-  content: '';
+.badge {
   position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #E31277;
-}
-
-.timeline-pointer::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border: 1px solid #E31277;
-  background-color: #fff;
-  z-index: 1;
-}
-
-.timeline-pointer--finished::before {
-  background-color: #E31277;
+  top: -12px;
+  right: -10px;
+  min-width: 22px;
+  min-height: 22px;
 }
 
 .btn-hover:hover,
@@ -16592,16 +16558,90 @@ ul, ol {
   border-bottom: 1px solid #E31277;
 }
 
-.header__tool {
-  right: 26px;
+.scrollbar::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 4px;
 }
 
-.header__tool .badge {
+.scrollbar::-webkit-scrollbar-thumb {
+  border: solid 1px #E31277;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.timeline::after {
+  content: '';
   position: absolute;
-  top: -12px;
-  right: -10px;
-  min-width: 22px;
-  min-height: 22px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #E31277;
+}
+
+.timeline-pointer::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: 1px solid #E31277;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.timeline-pointer--finished::before {
+  background-color: #E31277;
+}
+
+.image-h-84 {
+  height: 84px;
+}
+
+.image-h-120 {
+  height: 120px;
+}
+
+.image-h-256 {
+  height: 256px;
+}
+
+.image-h-285 {
+  height: 285px;
+}
+
+.image-h-345 {
+  height: 345px;
+}
+
+.image-h-400 {
+  height: 400px;
+}
+
+.image-h-560 {
+  height: 560px;
+}
+
+.image-w-120 {
+  width: 120px;
+}
+
+@media (min-width: 768px) {
+  .image-h-md-256 {
+    height: 256px;
+  }
+}
+
+@media (min-width: 992px) {
+  .image-h-lg-285 {
+    height: 285px;
+  }
 }
 
 .homebanner {
@@ -16610,11 +16650,6 @@ ul, ol {
   background-size: cover;
   background-position: center;
   min-height: 480px;
-}
-
-.cartModal .card-img {
-  width: 120px;
-  height: 120px;
 }
 
 .footer__banner {
@@ -16638,19 +16673,11 @@ ul, ol {
   }
 }
 
-.exhibition-card__img {
-  height: 345px;
-}
-
-.exhibition-card__date {
-  max-width: 40px;
-}
-
 @media (min-width: 768px) {
-  .exhibition-card__body {
+  .exhibition .card-body {
     min-height: 350px;
   }
-  .exhibition-card__desc {
+  .exhibition .card-desc {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -16658,18 +16685,18 @@ ul, ol {
   }
 }
 
-.liveReplay-card {
+.liveReplay .card {
   background-image: url("../images/people-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.liveReplay-card__desc {
+.liveReplay .card-desc {
   background-color: #190014CC;
 }
 
-.liveReplay-card__title-line::after {
+.liveReplay .card-title-line::after {
   content: '';
   position: absolute;
   top: -4px;
@@ -16679,30 +16706,11 @@ ul, ol {
   background-color: #fff;
 }
 
-.product-item__date {
-  max-width: 40px;
-}
-
-@media (min-width: 992px) {
-  .product-item__img {
-    height: 285px;
-  }
-}
-
-.detail .ticket__img {
-  height: 16rem;
-}
-
-.detail .ticket__date {
-  right: 25px;
-  max-width: 40px;
-}
-
 @media (min-width: 768px) {
-  .detail .ticket__box {
+  .detailTicket__body {
     height: 16rem;
   }
-  .detail .ticket__box:first-child::after {
+  .detailTicket__body:first-child::after {
     content: '';
     position: absolute;
     top: 0;
@@ -16711,18 +16719,6 @@ ul, ol {
     height: 100%;
     background-color: #000;
   }
-}
-
-.detail .info__img-01 {
-  height: 25rem;
-}
-
-.detail .info__img-02 {
-  height: 559px;
-}
-
-.cart-item__img {
-  height: 86px;
 }
 
 /*# sourceMappingURL=all.css.map */
