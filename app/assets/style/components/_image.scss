@@ -1,5 +1,4 @@
-
-.h {
+.image-h {
   &-84 {
     height: 84px;
   }
@@ -21,40 +20,21 @@
   &-560 {
     height: 560px;
   }
-  
 }
-.w {
+.image-w {
   &-120 {
     width: 120px;
   }
 }
 
-.h-md-256 {
+.image-h-md-256 {
   @include media-breakpoint-up(md) {
     height: 256px;
   }
 }
 
-.h-lg-285 {
+.image-h-lg-285 {
   @include media-breakpoint-up(lg) {
     height: 285px;
   }
 }
-
-
-// xs-1
-// sm-1
-// md-2
-// lg-3
-// xl-4
-// xxl-5
-
-// 84
-
-// 120
-// 256
-// 285
-// 345
-
-// 400
-// 599
