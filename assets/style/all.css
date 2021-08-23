@@ -16509,14 +16509,6 @@ ul, ol {
 
 /* 透明度遮罩 */
 /* 內文溢出-多行 */
-.badge {
-  position: absolute;
-  top: -12px;
-  right: -10px;
-  min-width: 22px;
-  min-height: 22px;
-}
-
 .btn-hover:hover,
 .link-hover:hover,
 .icon-hover:hover {
